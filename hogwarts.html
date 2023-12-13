@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.responsivevoice.org/responsivevoice.js?"></script>
+
+    <link rel="stylesheet" href="hog.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mail" class="mail">
+        
+        <div class="back">
+            <img  id ="seal" onclick="voice()" src="https://i.ibb.co/VV3mqdW/hogwarts-seal-png-hogwarts-seal-11562875865nb6p5tcxjz-removebg-preview.png">
+            <div class="cover"></div>
+            </div>
+            <div class="front">
+                <p id="frntmsg"> MR.sravankumar ,<br> the great wizard,<br>by all means  <br>Little rat,<br>you 
+                 </p>
+             </div>
+    </div>
+    <div id="hidden">
+        <div class="secondLetter">
+            <p id="text"></p>
+            <img id="letter" src="https://i.ibb.co/4mJYstS/paper-473630-1920.jpg">
+            <img src="https://i.ibb.co/tbT5sKn/eaa8281d0a180df0bac7a9e98332c56e.png"id="logo">
+            <h1 id="title">Hogwarts School of Witchcraft and wizardry </h1>
+        </div>
+        </div>
+        <button id="btn" onclick="voice()" 
+        type="button" value="Play">Open</button>
+       <footer class="footer">
+ 
+    </footer>
+</body>
+<script>
+    var username= prompt("please enter your name ");
+
+alert("hover the letter and tap the seal");
+
+
+function voice(){
+    responsiveVoice.speak('Dear'  +username+',  We are pleased to inform you that you have been accepted at Hogwarts School of Witchcraft and Wizardry. Please find enclosed a list of all necessary books and equipment. Term begins on 1ST January.by the way brush your teeths they stink ,love ya . Yours sincerely, sravankumar');
+    document.getElementById("btn").style.display="none";
+    document.getElementById("hidden").style.display="block";
+    document.getElementById("mail").style.display="none";
+}
+
+
+    const text= document.getElementById("text");
+const msg= "Dear "  +username+",</br> We are pleased to inform you that you have been accepted at Hogwarts School of Witchcraft and Wizardry. Please find enclosed a list of all necessary books and equipment. Term begins on 1st january. by the way brush your teeth they stink,love ya.</br> Yours sincerely,</br> sravankumar";
+
+let write = 1;
+function writing(){
+    text.innerHTML= msg.slice(0,write);
+    write++;
+    if(write> msg.length){
+        write=800;
+    }
+
+} 
+
+setInterval(writing,100);
+</script>
+</html>

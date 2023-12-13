@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Ramaraja&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("https://i.ibb.co/qnMNcJ3/classic-g84564cffe-1920.jpg");
+    background-repeat:no-repeat ;
+    background-size: 100vw 100vh;
+    font-family: 'Ramaraja', serif;
+}
+.mail{
+    display: block;
+}
+
+.mail > .front{
+    width: 300px;
+    height: 200px;
+    background:linear-gradient(#e3a03b,#B1A086);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: inset -30px -137px 50px -155px rgba(191,174,153,1);
+    left: 40%;
+    top: 25%;
+    position: absolute;
+    perspective: 600px;
+    transform:perspective-3d;
+    backface-visibility: hidden;
+    transition: transform .5s linear 0s;
+    cursor: pointer;
+
+}
+
+.mail > .back{
+    width: 300px;
+    height: 200px;
+    background: #ff8789;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    overflow: hidden;
+    perspective: 600px;
+    left: 40%;
+    top: 25%;
+    transform-style: perspective-3d;
+    cursor: pointer;
+}
+
+.back::before{
+    content: "";
+    position: absolute;
+    top:0;
+    right: 0;
+    border-left: 150px solid transparent;
+    border-right:150px solid #C9A068;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #D99559;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 1;
+    
+
+}
+
+.back::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 150px solid #C9A068;
+    border-right: 150px solid transparent;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #C9A068;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #D99559;
+    border-bottom: 100px solid transparent;
+    transform-origin: top;
+    transform: rotateX(0deg);
+}
+
+#seal{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 73px;
+    left: 122px;
+    z-index: 4;
+
+}
+
+.mail:hover > .front{
+    transform: rotateY(180deg);
+}
+
+.mail:hover > .back{
+    transform: rotateY(0deg);
+}
+
+#frntmsg{
+    text-align: center;
+    font-size: 18px;
+    color: #2C592F;
+    display: flex;
+    position: relative;
+    top: 25px;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-weight: bolder;
+}
+
+
+
+#letter{
+    width: 500px;
+    height: 500px;
+    -webkit-mask:
+    linear-gradient(red 0 0) center/calc(100% - 1.85*30px) calc(100% - 1.85*30px) no-repeat,
+    radial-gradient(farthest-side,red 98%,#0000) 0 0/60px 60px round;
+          mask:
+    linear-gradient(red 0 0) center/calc(100% - 1.85*30px) calc(100% - 1.85*30px) no-repeat,
+    radial-gradient(farthest-side,red 98%,#0000) 0 0/60px 60px round;
+
+}
+
+#logo{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 14%;
+    left: 35%;
+}
+
+#title{
+    top: 15%;
+    position: absolute;
+    font-size: 18px;
+    left: 43%;
+    width: 270px;
+    text-transform: capitalize;
+    color: #92000a;
+  
+}
+
+ #hidden{
+    display: none;
+} 
+
+button{
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    background-image: linear-gradient(
+          to left,
+          rgb(146 234 255 / 75%) 17%,
+          rgb(249 145 251 / 86%) 100%
+        );
+        box-shadow: 0 2px 60px -8px #d091fb;
+        padding: 10px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: monospace;
+        text-transform: capitalize;
+        outline: none;
+        border: none;
+}
+
+#text{
+    color: #ff0000;
+    position: absolute;
+    text-transform: capitalize;
+    top: 24%;
+    left: 33%;
+    width: 400px;
+    padding: 35px;
+    font-size: 16px;
+    z-index: 10000;
+
+}
+
+@media (max-width:480px){
+    #text{
+        top:  35%;
+        left: 15%;
+        width: 330px;
+        font-size: 16px;
+ }
+    #title{
+        top: 28%;
+        width: 200px;
+        left:35% ;
+    }
+    #logo{
+        top: 27%;
+        left: 16%;
+    }
+    #letter{
+        width: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width:480px)   {
+    #mail > .front{
+         left: 17%;
+     }
+     #mail > .back{
+         left: 17%;
+     }
+     #btn{
+         top: 55%;
+         left: 40%;
+     }
+}
+
+@media  (min-width:481px) and (max-width:544px) {
+    #mail > .front{
+        left: 23%;
+    }
+    #mail > .back{
+        left: 23%;
+    }
+    #btn{
+        top: 53%;
+        left: 43%;
+    }
+
+    #text{
+        top:  32%;
+        left: 18%;
+        width: 330px;
+        font-size: 16px;
+ }
+    #title{
+        top: 24%;
+        width: 200px;
+        left:35% ;
+    }
+    #logo{
+        top: 24%;
+        left: 19%;
+    }
+    #letter{
+        width: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width:360px){
+    #mail > .front{
+        left: 10%;
+    }
+    #mail > .back{
+        left: 10%;
+    }
+    #btn{
+        top: 65%;
+        left: 40%;
+    }
+
+    #text{
+        top:  35%;
+        left: 12%;
+        width: 330px;
+        font-size: 16px;
+ }
+    #title{
+        top: 29%;
+        width: 200px;
+        left:35% ;
+    }
+    #logo{
+        top: 28%;
+        left: 12%;
+    }
+    #letter{
+        width: 350px;
+        width: 350px;
+    }
+}
+
+@media (min-width:545px){
+    #btn{
+        top: 55%;
+        left: 45%;
+    }
+
+    #text{
+        top:  35%;
+        left: 15%;
+        width: 400px;
+        font-size: 16px;
+ }
+    #title{
+        top: 27%;
+        width: 270px;
+        left:32% ;
+    }
+    #logo{
+        top: 27%;
+        left: 15%;
+    }
+    
+}
+
+footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background:#92000a;
+  padding:20px;
+  text-align: center;
+  font-family:monospace;
+}
+.footer a{
+  padding:5px 5px;
+  text-decoration:none;
+  font-size: 25px;
+  font-weight:bold;
+  color:  #fff;
+  animation:anim 3.2s linear infinite ;
+}
+@keyframes anim{
+    0%{
+        border-top:3px solid #fff;
+    }
+    25%{
+        border-left:3px solid #fff;
+    }
+    50%{
+        border-bottom:3px solid #fff;
+    }
+    75%{
+        border-right:3px solid #fff;
+    }
+}
